@@ -1,30 +1,27 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-
 import 'package:sensortrack_flutter/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets(
+    'SensorTrackApp muestra SplashPage y navega automáticamente a HomePage',
+    (WidgetTester tester) async {
+      await tester.pumpWidget(const SensorTrackApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+      // En el primer frame se renderiza SplashPage con el nombre de la app.
+      expect(find.text('SensorTrack'), findsOneWidget);
+      expect(find.byType(CircularProgressIndicator), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+      // Avanzar el temporizador del Splash y completar la animación de ruta.
+      await tester.pump(const Duration(seconds: 2));
+      await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+      // Una vez en HomePage deben mostrarse el estado y los 4 módulos.
+      expect(find.text('Módulos disponibles'), findsOneWidget);
+      expect(find.text('Sensores'), findsOneWidget);
+      expect(find.text('Ubicación'), findsOneWidget);
+      expect(find.text('Historial'), findsOneWidget);
+      expect(find.text('Estadísticas'), findsOneWidget);
+    },
+  );
 }
