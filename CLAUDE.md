@@ -106,7 +106,7 @@ flutter pub get
 | `geolocator` | `^14.1.2` | Gestión de permisos y lectura de ubicación GPS y precisión |
 | `fl_chart` | `^1.3.1` | Gráficos estadísticos de evolución de mediciones |
 
-> **Nota importante sobre UI en `pubspec.yaml`:** El proyecto inicial incluye `material_ui: ^1.1.0` proveniente del template inicial de Flutter/Dart (`sdk: ^3.14.0`). No lo elimines de `pubspec.yaml` sin validar compatibilidad previa; sin embargo, para mantener consistencia entre pantallas y con los ejemplos del taller, todo el código nuevo en `lib/` debe estandarizarse importando **`package:flutter/material.dart`** (Material 3 estándar de Flutter).
+> **Nota importante sobre UI en `pubspec.yaml`:** El proyecto inicial incluye `material_ui: ^1.1.0` proveniente del template inicial de Flutter/Dart (`sdk: ^3.14.0`). En esta versión del SDK (Flutter 3.47+), `package:flutter/material.dart` está marcado como `@Deprecated` y genera advertencias en `flutter analyze`. Por lo tanto, **todo archivo de UI en `lib/` y `test/` debe importar `package:material_ui/material_ui.dart`** para mantener consistencia y 0 advertencias en el analizador estático.
 
 ### Permisos nativos requeridos
 Al configurar el módulo de ubicación (`geolocator`), verificar los manifiestos nativos:
@@ -163,7 +163,7 @@ CREATE TABLE sensor_readings (
   flutter run --dart-define=SUPABASE_URL=https://tu-proyecto.supabase.co --dart-define=SUPABASE_KEY=tu-clave-publica
   ```
 - Si el equipo opta por archivo `.env`, debe añadirse `.env` a `.gitignore` y versionar únicamente `.env.example` sin valores reales.
-- **Nota técnica sobre `Supabase.initialize`:** El documento del taller muestra `publishableKey:` en `Supabase.initialize(...)`. Al instalar `supabase_flutter`, verificar si la versión instalada usa el parámetro `anonKey:` o `publishableKey:` y unificarlo en `lib/config/supabase_config.dart`.
+- **Nota técnica sobre `Supabase.initialize`:** En la versión instalada (`supabase_flutter ^2.18.3`), el parámetro oficial vigente es `publishableKey:` (el parámetro `anonKey:` está marcado como `@Deprecated`). Unificar siempre el uso de `publishableKey:` en `lib/config/supabase_config.dart`.
 
 ---
 
