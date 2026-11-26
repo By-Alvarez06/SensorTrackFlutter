@@ -2,6 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<!-- Permiso de ubicación en primer plano para geolocator -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>SensorTrack necesita acceder a tu ubicación para registrar coordenadas GPS y precisión en el taller.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
