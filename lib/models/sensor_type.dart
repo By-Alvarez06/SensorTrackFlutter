@@ -20,30 +20,30 @@ enum SensorType {
 
   /// Identificador textual exacto usado en la columna `sensor_type` de Supabase.
   String get dbValue => switch (this) {
-    SensorType.accelerometer => 'accelerometer',
-    SensorType.gyroscope => 'gyroscope',
-    SensorType.gps => 'gps',
-    SensorType.magnetometer => 'magnetometer',
-    SensorType.light => 'light',
-  };
+        SensorType.accelerometer => 'accelerometer',
+        SensorType.gyroscope => 'gyroscope',
+        SensorType.gps => 'gps',
+        SensorType.magnetometer => 'magnetometer',
+        SensorType.light => 'light',
+      };
 
   /// Nombre legible en español para mostrar al usuario en las vistas.
   String get displayName => switch (this) {
-    SensorType.accelerometer => 'Acelerómetro',
-    SensorType.gyroscope => 'Giroscopio',
-    SensorType.gps => 'GPS / Ubicación',
-    SensorType.magnetometer => 'Magnetómetro',
-    SensorType.light => 'Sensor de luz',
-  };
+        SensorType.accelerometer => 'Acelerómetro',
+        SensorType.gyroscope => 'Giroscopio',
+        SensorType.gps => 'GPS / Ubicación',
+        SensorType.magnetometer => 'Magnetómetro',
+        SensorType.light => 'Sensor de luz',
+      };
 
   /// Unidad de medida principal asociada al sensor para formateo en interfaz.
   String get unit => switch (this) {
-    SensorType.accelerometer => 'm/s²',
-    SensorType.gyroscope => 'rad/s',
-    SensorType.gps => '° / m',
-    SensorType.magnetometer => 'µT',
-    SensorType.light => 'lx',
-  };
+        SensorType.accelerometer => 'm/s²',
+        SensorType.gyroscope => 'rad/s',
+        SensorType.gps => '° / m',
+        SensorType.magnetometer => 'µT',
+        SensorType.light => 'lx',
+      };
 
   /// Convierte el valor de texto proveniente de PostgreSQL en un [SensorType].
   ///
@@ -58,10 +58,10 @@ enum SensorType {
       'magnetometer' => SensorType.magnetometer,
       'light' => SensorType.light,
       _ => throw ArgumentError.value(
-        value,
-        'value',
-        'Tipo de sensor no soportado por SensorTrack',
-      ),
+          value,
+          'value',
+          'Tipo de sensor no soportado por SensorTrack',
+        ),
     };
   }
 }
