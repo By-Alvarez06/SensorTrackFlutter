@@ -153,16 +153,16 @@ class SensorReading {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    sensorType,
-    x,
-    y,
-    z,
-    latitude,
-    longitude,
-    accuracy,
-    recordedAt,
-  );
+        id,
+        sensorType,
+        x,
+        y,
+        z,
+        latitude,
+        longitude,
+        accuracy,
+        recordedAt,
+      );
 
   @override
   String toString() {
