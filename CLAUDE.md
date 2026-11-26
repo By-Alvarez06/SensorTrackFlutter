@@ -101,12 +101,12 @@ flutter pub get
 | Tecnología / Paquete | Versión en `pubspec.yaml` | Utilidad en SensorTrack |
 | --- | --- | --- |
 | `flutter` | SDK (`dart ^3.14.0`) | Framework de desarrollo móvil multiplataforma |
-| `supabase_flutter` | `^2.18.3` | Cliente oficial para conexión y consultas a Supabase (PostgreSQL) |
-| `sensors_plus` | `^7.1.1` | Lectura en tiempo real de acelerómetro, giroscopio (y magnetómetro) |
-| `geolocator` | `^14.1.2` | Gestión de permisos y lectura de ubicación GPS y precisión |
-| `fl_chart` | `^1.3.1` | Gráficos estadísticos de evolución de mediciones |
+| `supabase_flutter` | `^2.8.0` | Cliente oficial para conexión y consultas a Supabase (PostgreSQL) |
+| `sensors_plus` | `^6.1.0` | Lectura en tiempo real de acelerómetro, giroscopio (y magnetómetro) |
+| `geolocator` | `^13.0.2` | Gestión de permisos y lectura de ubicación GPS y precisión |
+| `fl_chart` | `^0.69.0` | Gráficos estadísticos de evolución de mediciones |
 
-> **Nota importante sobre UI en `pubspec.yaml`:** El proyecto inicial incluye `material_ui: ^1.1.0` proveniente del template inicial de Flutter/Dart (`sdk: ^3.14.0`). En esta versión del SDK (Flutter 3.47+), `package:flutter/material.dart` está marcado como `@Deprecated` y genera advertencias en `flutter analyze`. Por lo tanto, **todo archivo de UI en `lib/` y `test/` debe importar `package:material_ui/material_ui.dart`** para mantener consistencia y 0 advertencias en el analizador estático.
+> **Nota importante sobre UI en `pubspec.yaml`:** El proyecto inicial incluye `material_ui: ^0.0.1` proveniente del template inicial de Flutter/Dart (`sdk: ^3.14.0`). En esta versión del SDK (Flutter 3.47+), `package:flutter/material.dart` está marcado como `@Deprecated` y genera advertencias en `flutter analyze`. Por lo tanto, **todo archivo de UI en `lib/` y `test/` debe importar `package:material_ui/material_ui.dart`** para mantener consistencia y 0 advertencias en el analizador estático.
 
 ### Permisos nativos requeridos
 Al configurar el módulo de ubicación (`geolocator`), verificar los manifiestos nativos:
