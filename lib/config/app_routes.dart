@@ -32,11 +32,11 @@ abstract final class AppRoutes {
 
   /// Mapa de constructores de pantallas consumido por `MaterialApp.routes`.
   static Map<String, WidgetBuilder> get routes => {
-    splash: (_) => const SplashPage(),
-    home: (_) => const HomePage(),
-    sensors: (_) => const SensorsPage(),
-    location: (_) => const LocationPage(),
-    history: (_) => const HistoryPage(),
-    stats: (_) => const StatsPage(),
-  };
+        splash: (_) => const SplashPage(),
+        home: (_) => const HomePage(),
+        sensors: (_) => const SensorsPage(),
+        location: (_) => const LocationPage(),
+        history: (_) => const HistoryPage(),
+        stats: (_) => const StatsPage(),
+      };
 }
